@@ -1,7 +1,7 @@
 Halibot RSS Reader
 ==================
 
-Reads and parses config option
+Reads and parses RSS and Atom feeds.
 
 Config Options
 --------------
