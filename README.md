@@ -1,7 +1,7 @@
 Halibot RSS Reader
 ==================
 
-Reads and parses RSS and Atom feeds.
+Reads and parses RSS and Atom feeds. Will display any new entries in the feed after the last time it checked and starting from when the module first spun up (so it will not display any backlog).
 
 Config Options
 --------------
