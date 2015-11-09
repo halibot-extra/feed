@@ -9,7 +9,7 @@ Config Options
  * `feeds` is an array of urls to grab feeds from. (default [])
  * `delay` is the delay between checking the feeds in seconds. (default 900)
  * `format` is the format string for how to output new entries. See below for more information.
- * `context` the context to which to send the feeds.
+ * `context` the context to which to send the feeds. (Required with a non-empty `feeds` array)
 
 
 Format Option
