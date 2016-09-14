@@ -54,7 +54,7 @@ class FeedModule(HalModule):
 		self.log.info('New entry: "{}"'.format(body))
 
 		# TODO make more sensible
-		self.send_to(Message(body=body, context=cxt), [ cxt.agent ])
+		self.reply(Message(body=body, context=cxt))
 
 	# Parse all of the give feeds
 	def parse_feeds(self):
@@ -64,8 +64,8 @@ class FeedModule(HalModule):
 		for url in urls:
 			f = self.retrieve_feed(url)
 			for ent in f.entries:
-				# Check that the entry is new
-				if self.last_time < ent.modified_parsed:
+				# Check that the entry is new (if we can)
+				if not 'modified_parsed' in ent or self.last_time < ent.modified_parsed:
 					self.handle_new_entry(f.feed, ent)
 
 		self.last_time = newtime
